@@ -23,6 +23,8 @@ composer.lock
 *.lock
 resources/lang/en.json
 
+public.zip
+
 .env
 updates.zip
 ecommerce.zip
@@ -30,5 +32,3 @@ install.zip
 /nbproject/private/
 /nbproject
 matrimonial_laravel.zip
-
-public.zip
