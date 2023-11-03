@@ -23,8 +23,6 @@ composer.lock
 *.lock
 resources/lang/en.json
 
-public.zip
-
 .env
 updates.zip
 ecommerce.zip
