@@ -423,15 +423,30 @@ class MemberController extends Controller
             return back();
         }
     }
+    
+    // public function member_permanemtly_delete($id)
+    // {
+    //     $user = User::withTrashed()->where('id', $id)->first();
+    //     $user->permanently_delete = 1;
+    //     if ($user->save()) {
+    //         flash('Member permanently deleted successfully')->success();
+    //         return redirect()->route('deleted_members');
+    //     } else {
+    //         flash('Sorry! Something went wrong.')->error();
+    //         return back();
+    //     }
+    // }
+    
     public function member_permanemtly_delete($id)
     {
         $user = User::withTrashed()->where('id', $id)->first();
-        $user->permanently_delete = 1;
-        if ($user->save()) {
+
+        if ($user) {
+            $user->forceDelete();
             flash('Member permanently deleted successfully')->success();
             return redirect()->route('deleted_members');
         } else {
-            flash('Sorry! Something went wrong.')->error();
+            flash('Sorry! Member not found.')->error();
             return back();
         }
     }
